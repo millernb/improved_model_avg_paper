@@ -8,7 +8,7 @@ To ensure reproducibility, the repository contains an Anaconda environment speci
 
 ```
 conda env create -f conda-spec.yml
-conda activate alternative_ICs
+conda activate improved_model_avg
 ```
 
 to download and install the required Python modules, and then activate the environment.  Then run `jupyter notebook` to access the Jupyter notebook files `test_poly_vary.ipynb` (polynomial model tests and figures 1,2) and `test_exp_tmin.ipynb` (exponential model tests and figures 3-9.)
