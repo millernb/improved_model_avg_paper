@@ -1,4 +1,4 @@
-name: alternative_ICs
+name: improved_model_avg_paper
 channels:
   - conda-forge
 dependencies:
