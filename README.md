@@ -1,6 +1,6 @@
 # improved_model_avg_paper
 
-This repository contains code used for tests of Bayesian model averaging, as presented in the paper Improved information criteria for Bayesian model averaging in lattice field theory.  In particular, the code included can be used to generate figures 1-9 of the paper (or re-generate them with different random seeds, if desired.)
+This repository contains code used for tests of Bayesian model averaging, as presented in the paper "Improved information criteria for Bayesian model averaging in lattice field theory."  In particular, the code included can be used to generate figures 1-9 of the paper (or re-generate them with different random seeds, if desired.)
 
 ## Installation
 
