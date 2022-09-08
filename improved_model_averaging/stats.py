@@ -326,7 +326,7 @@ def prior_stats_fit(fr):
     
     cov_prior_inv = np.linalg.inv(cov_prior)
     
-    p_prior = gv.mean(fr.p0.values())
+    p_prior = gv.mean(fr.prior.values())
     p_best_fit = gv.mean(fr.p.values())
     
     chi2_prior = (p_best_fit - p_prior).T @ cov_prior_inv @ (p_best_fit - p_prior)
@@ -365,7 +365,7 @@ def chi2_derivatives(fr, model_derivs, test_data, chi2_i=True, calc_d3=True):
     prior_stats = prior_stats_fit(fr)
     cov_prior_inv = prior_stats['cov_prior_inv']
     
-    p_prior = gv.mean(fr.p0.values())
+    p_prior = gv.mean(fr.prior.values())
     p_best_fit = gv.mean(fr.p.values())
     
     
