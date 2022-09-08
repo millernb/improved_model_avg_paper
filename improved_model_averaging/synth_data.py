@@ -70,7 +70,6 @@ double_exp_model_derivs = {
     'd3': d3_double_exp,
 }
 
-## Below function is unused so far?
 @jax.jit
 def multi_exp_model_jax(p, t, Nexc=2):
     # p must be entered as p = [A0, E0, A1, E1, ...]
