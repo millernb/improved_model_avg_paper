@@ -133,7 +133,7 @@ def run_fit_double_exp(
             "A0": gv.gvar("0(10)"),
             "E0": gv.gvar("0.4(4)"),
             "A1": gv.gvar("0(10)"),
-            "ldE1": gv.gvar("-1(3)"),
+            "log(dE)": gv.gvar("-1(3)"),
         }
 
     fr = lsqfit.nonlinear_fit(
@@ -151,7 +151,7 @@ def run_fit_double_exp(
             p0 = {"A0": fr_alt_guess.pmean["A0"],
                   "E0": fr_alt_guess.pmean["E0"],
                   "A1": fr_alt_guess.pmean["A1"],
-                  "ldE1": fr_alt_guess.pmean["ldE1"],
+                  "log(dE)": fr_alt_guess.pmean["log(dE)"],
                  }
         
             fr = lsqfit.nonlinear_fit(
@@ -163,7 +163,7 @@ def run_fit_double_exp(
             )
                 
     # Must match ordering as specified in synth_data.py
-    jax_pars = ["A0", "E0", "A1", "ldE1"]
+    jax_pars = ["A0", "E0", "A1", "log(dE)"]
 
     model_derivs = compute_derivatives(double_exp_model_derivs,fr,data,jax_pars)
     

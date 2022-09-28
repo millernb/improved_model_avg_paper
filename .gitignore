@@ -1,1 +1,7 @@
 .DS_Store
+improved_model_averaging/__pycache__/__init__.cpython-310.pyc
+improved_model_averaging/__pycache__/fitting.cpython-310.pyc
+improved_model_averaging/__pycache__/plotting.cpython-310.pyc
+improved_model_averaging/__pycache__/stats.cpython-310.pyc
+improved_model_averaging/__pycache__/synth_data.cpython-310.pyc
+improved_model_averaging/__pycache__/test_tmin.cpython-310.pyc

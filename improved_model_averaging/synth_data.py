@@ -22,7 +22,7 @@ def single_exp_model_lsqfit(t, p):
 def double_exp_model_lsqfit(t, p):
     ans = 0.0
     ans += p["A0"] * np.exp(-p["E0"] * t)
-    ans += p["A1"] * np.exp(-(p["E0"] + np.exp(p["ldE1"])) * t)
+    ans += p["A1"] * np.exp(-(p["E0"] + np.exp(p["log(dE)"])) * t)
     return ans
 
 def multi_exp_model_lsqfit(t, p, Nexc=2):
@@ -54,7 +54,7 @@ single_exp_model_derivs = {
 
 @jax.jit
 def double_exp_model_jax(p, t):
-    # p must be entered as [A0, E0, A1, ldE1]
+    # p must be entered as [A0, E0, A1, log(dE)]
     ans = 0.0
     ans += p[0] * jnp.exp(-p[1] * t)
     ans += p[2] * jnp.exp(-(p[1] + jnp.exp(p[3])) * t)
