@@ -45,15 +45,23 @@ def cut_data_tmin(data, tmin, tmax=None, data_snr_min=0.0, continuous_cut=False)
         T_keep = np.logical_and(T_keep, data_noise_cut)
         T_cut = np.logical_and(T_cut, data_noise_cut)
     
+    yexact = data.get('yexact', None)
+    if yexact is not None:
+        yexact_keep = yexact[T_keep]
+        yexact_cut = yexact[T_cut]
+    else:
+        yexact_keep = None
+        yexact_cut = None
+
     return {
         'ND': data['ND'],
         't': data['t'][T_keep],
         'y': data['y'][T_keep],
-        'yexact': data['yexact'][T_keep],
+        'yexact': yexact_keep,
         'yraw': data['yraw'][:,T_keep],
         't_cut': data['t'][T_cut],
         'y_cut': data['y'][T_cut],
-        'yexact_cut': data['yexact'][T_cut],
+        'yexact_cut': yexact_cut,
         'yraw_cut': data['yraw'][:,T_cut],
     }
 
