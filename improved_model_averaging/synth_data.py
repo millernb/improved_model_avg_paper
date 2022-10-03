@@ -199,7 +199,7 @@ def cut_synth_data_Nsamp(synth_data, Ns_cut):
 
         cut_data.append({
             "t": synth_data[1]["t"],
-            "yexact": synth_data[1]["yexact"],
+            "yexact": synth_data[1].get("yexact", None),
             "ND": Ns_cut,
             "yraw": cut_data_raw,
             "y": cut_data_avg,
@@ -212,7 +212,7 @@ def cut_synth_data_Nsamp(synth_data, Ns_cut):
 
         cut_data = {
             "t": synth_data["t"],
-            "yexact": synth_data["yexact"],
+            "yexact": synth_data.get("yexact", None),
             "ND": Ns_cut,
             "yraw": cut_data_raw,
             "y": cut_data_avg,
